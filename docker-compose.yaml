@@ -106,7 +106,7 @@ services:
     MYSQL_PASSWORD: ${MYSQL_PASSWORD}
     MYSQL_DATABASE: ${MYSQL_DATABASE}
     MYSQL_USER: ${MYSQL_USER}
-  volumesss:
+  volumes:
    - ncconfig:/var/www/html/config
    - ncdata:/var/www/html/data
    - ncapps:/var/www/html/apps
