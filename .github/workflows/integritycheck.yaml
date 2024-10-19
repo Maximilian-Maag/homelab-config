@@ -9,8 +9,7 @@ on:
 jobs:
   validate-docker-compose:
     runs-on: ubuntu-latest
-
-    variables:
+    env:
       LDAP_LOG_LEVEL: 256
       LDAP_ORGANISATION: Max_Homelab
       LDAP_DOMAIN: yourlocalcloud.de
@@ -83,14 +82,14 @@ jobs:
       COLLABORA_PORT: 9980
       COLLABORA_PROT: https
 
-steps:
-  - name: Checkout code
-    uses: actions/checkout@v2
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-  - name: Set up Docker Compose
-    run: |
-      sudo apt-get update -y
-      sudo apt-get install docker-compose -y
+      - name: Set up Docker Compose
+        run: |
+          sudo apt-get update -y
+          sudo apt-get install docker-compose -y
 
-  - name: Validate docker-compose.yml
-    run: docker-compose -f docker-compose.yaml config
+      - name: Validate docker-compose.yml
+        run: docker-compose -f docker-compose.yaml config
