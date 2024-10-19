@@ -10,7 +10,7 @@ jobs:
   validate-docker-compose:
     runs-on: ubuntu-latest
 
-    env:
+    variables:
       LDAP_LOG_LEVEL: 256
       LDAP_ORGANISATION: Max_Homelab
       LDAP_DOMAIN: yourlocalcloud.de
