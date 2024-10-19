@@ -16,8 +16,8 @@ jobs:
 
       - name: Set up Docker Compose
         run: |
-          sudo apt-get update
+          sudo apt-get update -y
           sudo apt-get install docker-compose -y
 
       - name: Validate docker-compose.yml
-        run: docker-compose -f docker-compose.yml config
+        run: docker-compose -f docker-compose.yaml config
