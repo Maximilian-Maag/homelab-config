@@ -10,10 +10,8 @@ networks:
             driver: default
             config:
                 - subnet: 172.29.0.0/16
-  paperless:
 
 services:
-
  collabora:
     image: collabora/code
     container_name: collabora
@@ -40,7 +38,6 @@ services:
             ipv4_address: 172.28.1.1
         proxy:
             ipv4_address: 172.29.1.1
-        paperless:
     ports:
         - '80:80'
         - '81:81'
@@ -49,6 +46,6 @@ services:
         - revproxdata:/data
         - revproxletsencrypt:/etc/letsencrypt
 
-  # proxy manager volumes
+volumes:
   revproxdata:
   revproxletsencrypt:
